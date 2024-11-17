@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portal News</title>
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        text-decoration: none;
+      }
+
+      body {
+        font-family: "Poppins", serif;
+      }
+
+      .header {
+        display: flex;
+        height: 30px;
+        width: 100%;
+        align-items: center;
+        justify-content: space-between;
+        padding: 10px 10px;
+        border-bottom: 1px solid rgb(203, 191, 191);
+      }
+
+      .logo {
+        font-weight: 700;
+      }
+
+      .logo-link {
+        color: red;
+        font-size: 19px;
+      }
+
+      .link2 {
+        color: black;
+      }
+
+      .nav {
+        align-items: center;
+        justify-content: flex-start;
+        display: flex;
+        flex-grow: 1;
+        font-size: 11px;
+      }
+
+      nav ul {
+        display: flex;
+        list-style: none;
+        margin-left: 30px;
+      }
+
+      nav ul li a {
+        color: black;
+        display: block;
+        margin: 0 8px;
+        font-weight: 500;
+        padding: 6px 15px;
+      }
+
+      .breakingNews {
+        display: block;
+        margin-left: 10px;
+        margin-top: 10px;
+        width: 100%;
+        align-items: center;
+      }
+
+      .title {
+        background: red;
+        display: flex;
+        width: 100%;
+        height: 40px;
+        align-items: center;
+      }
+
+      .title-text {
+        color: white;
+        margin-left: 10px;
+      }
+
+      .bNewsContnr {
+        display: flex;
+        align-items: center;
+        padding: 6px 15px;
+        border: 1px solid rgb(189, 184, 184);
+        justify-content: space-between;
+        margin-bottom: 20px;
+      }
+
+      .bNews1 {
+        display: flex;
+        align-items: center;
+        width: 68%;
+      }
+
+      .img-bn {
+        width: 20%;
+        margin-right: 20px;
+      }
+
+      .bNews2 h4,
+      .bNews2 .time {
+        display: inline;
+      }
+
+      .bNews2 {
+        padding: 10px 20px;
+        width: 32%;
+        border-left: 1px solid rgb(189, 184, 184);
+      }
+
+      .time1 {
+        margin-left: 10px;
+        color: rgb(255, 0, 0);
+        font-size: 12px;
+        font-weight: 700;
+      }
+
+      .time2 {
+        margin-left: 10px;
+        color: rgb(255, 0, 0);
+        font-size: 12px;
+        font-weight: 700;
+      }
+
+      .contnrConten {
+        height: 530px;
+        width: 100%;
+        display: flex;
+        margin-left: 10px;
+      }
+
+      .contenRight {
+        width: 15%;
+        border-top: 3px solid black;
+        margin-right: 10px;
+      }
+
+      .titleCR {
+        padding: 10px 5px 5px 5px;
+      }
+
+      .crTitle {
+        font-weight: 700;
+      }
+
+      .cr1 {
+        margin: 10px 0;
+        font-size: 15px;
+        font-weight: 600;
+        border-bottom: 1px solid rgb(189, 184, 184);
+      }
+
+      .cr2 {
+        margin: 10px 0;
+        font-size: 15px;
+        font-weight: 600;
+        border-bottom: 1px solid rgb(189, 184, 184);
+      }
+
+      .cr3 {
+        margin: 10px 0;
+        font-size: 15px;
+        font-weight: 600;
+        border-bottom: 1px solid rgb(189, 184, 184);
+      }
+
+      .cr4 {
+        margin: 10px 0;
+        font-size: 15px;
+        font-weight: 600;
+        border-bottom: 1px solid rgb(189, 184, 184);
+      }
+
+      .cr5 {
+        margin: 10px 0;
+        font-size: 15px;
+        font-weight: 600;
+        border-bottom: 1px solid rgb(189, 184, 184);
+      }
+
+      .cr6 {
+        margin: 10px 0;
+        font-size: 15px;
+        font-weight: 600;
+      }
+
+      .midContenCntr {
+        display: block;
+        width: 65%;
+        border-left: 1px solid rgb(189, 184, 184);
+      }
+
+      .midContenTop {
+        display: flex;
+        padding-bottom: 10px;
+        margin-left: 10px;
+        flex-direction: flex-start;
+        gap: 15px;
+        border-bottom: 1px solid rgb(189, 184, 184);
+      }
+
+      .contenTop {
+        width: 30%;
+        height: auto;
+        margin-left: 10px;
+      }
+
+      .textContainer {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        width: 70%;
+      }
+
+      .titleCT {
+        font-size: 18px;
+        font-weight: 700;
+        margin-bottom: 10px;
+      }
+
+      .listCT {
+        display: block;
+        margin-top: 10px;
+      }
+
+      .listCT ul {
+        list-style-type: disc;
+        margin-left: 20px;
+        padding: 0;
+      }
+
+      .listCT li {
+        font-size: 15px;
+        font-weight: 500;
+        margin-bottom: 5px;
+      }
+
+      .mostPopular {
+        margin-left: 10px;
+        width: 20%;
+      }
+
+      .mostPopularImg {
+        width: 100%;
+        height: auto;
+        margin-bottom: 10px;
+      }
+
+      .mostPopular .titleCR {
+        padding: 10px 5px 5px 5px;
+        border-top: 3px solid black;
+      }
+
+      .mostPopular .crTitle {
+        font-weight: 700;
+      }
+
+      .mostPopular .cr1,
+      .mostPopular .cr2,
+      .mostPopular .cr3,
+      .mostPopular .cr4,
+      .mostPopular .cr5,
+      .mostPopular .cr6 {
+        margin: 10px 0;
+        font-size: 15px;
+        font-weight: 600;
+        border-bottom: 1px solid rgb(189, 184, 184);
+      }
+
+      .midContenBot {
+        display: flex;
+        padding: 10px;
+        justify-content: space-between;
+        gap: 20px;
+        margin-top: 10px;
+        flex-wrap: wrap;
+      }
+
+      .item {
+        flex: 0 1 calc(33.333% - 20px);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: left;
+      }
+
+      .midBotcntn {
+        width: 100%;
+        height: auto;
+        border: 1px solid #ccc;
+      }
+
+      .titleItem {
+        font-size: 14px;
+        font-weight: 600;
+        margin: 10px 0;
+      }
+
+      .itemlis {
+        margin-left: 10px;
+        font-size: 12px;
+        color: #000000;
+      }
+
+      .footer {
+        display: block;
+        margin-bottom: 10px;
+        height: 150px;
+        width: 80%;
+        float: left;
+        top: 50%;
+        border-top: 3px solid black;
+        margin-top: 10px;
+        margin-left: 10px;
+      }
+
+      .topPicks {
+        display: flex;
+        margin-left: 10px;
+        padding: 10px;
+      }
+
+      .topiks {
+        margin-left: 10px;
+        font-weight: 600;
+      }
+
+      .itemTopik {
+        /* display: block; */
+        align-items: center;
+        margin-bottom: 15px;
+      }
+
+      .topikcontn {
+        width: 90%;
+        height: auto;
+      }
+
+      .titleItem {
+        font-size: 14px;
+        font-weight: 600;
+        color: #000;
+      }
+    </style>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Playwrite+GB+S:ital,wght@0,100..400;1,100..400&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="header">
+      <div class="logo">
+        <a href="" class="logo-link">SF</a>
+        <a href="" class="logo-link link2">GATE</a>
+      </div>
+      <div class="nav">
+        <nav>
+          <ul class="hdList">
+            <li><a href="">LOCAL</a></li>
+            <li><a href="">NEWS</a></li>
+            <li><a href="">SPORTS</a></li>
+            <li><a href="">REAL ESTATE</a></li>
+            <li><a href="">BUSINESS</a></li>
+            <li><a href="">A&E</a></li>
+            <li><a href="">EAT+DRINK</a></li>
+            <li><a href="">LIVING</a></li>
+            <li><a href="">TRAVEL</a></li>
+            <li><a href="">OBITS</a></li>
+            <li><a href="">CARS</a></li>
+            <li><a href="">JOBS</a></li>
+            <li><a href="">CLASSIFIEDS</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+
+    <div class="breakingNews">
+      <div class="title">
+        <h3 class="title-text">BREAKING NEWS</h3>
+      </div>
+      <div class="bNewsContnr">
+        <div class="bNews1">
+          <img src="https://github.com/musnasproject/tugasP13pw1/blob/main/strategy.jpg" alt="" class="img-bn" />
+          <h3>TWICE's will make a comeback soon</h3>
+          <span class="time1">9.30 PM</span>
+        </div>
+        <div class="bNews2">
+          <h4>Megan Thee Stallion will collaborate with TWICE on the song Mamushi</h4>
+          <span class="time2">10.15 PM</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="contnrConten">
+      <div class="contenRight">
+        <div class="titleCR">
+          <span class="crTitle">LATEST NEWS</span>
+          <p class="cr1">
+            Lisa and Rosalia Collaborate with the song 'New Woman'.
+          </p>
+          <p class="cr2">
+            Tommorow By Together (TXT) currently on a world tour.
+          </p>
+          <p class="cr3">
+            Tzuyu has just released debut solo song 'Run Away'.
+          </p>
+          <p class="cr4">
+            Nmixx have a new song tittle 'See That'.
+          </p>
+          <p class="cr5">
+            Minn hejin VS Hybe contoversy.
+          </p>
+          <p class="cr6">
+            ITZY has just made a comeback.
+          </p>
+        </div>
+      </div>
+
+      <div class="midContenCntr">
+        <div class="midContenTop">
+          <img src="https://github.com/musnasproject/tugaspwmograman/blob/main/apt.jpg" alt="Content Image" class="contenTop" />
+          <div class="textContainer">
+            <span class="titleCT"
+              >Rose & Bruno Mars collaborate with the song title 'APT'.</span
+            >
+            <div class="listCT">
+              <ul>
+                <li>APT APT APT APT</li>
+                <li>Legendary Collaboration</li>
+                <li>Song Of The Year</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="midContenBot">
+          <div class="item">
+            <img src="https://github.com/musnasproject/tugasP13pw1/blob/main/home9.jpg" alt="" class="midBotcntn" />
+            <div class="titleItem">
+             did TWICE just have a fanmeeting? when do they do it
+            </div>
+            <div class="itemlis">
+              <ul>
+                <li>
+                  YES, they held a fanmeet because they celebrate the group's 9th anniversary on October 20
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="item">
+            <img src="https://github.com/musnasproject/tugasP13pw1/blob/main/konser.jpg" alt="" class="midBotcntn" />
+            <div class="titleItem">
+              is SEVENTEEN currently on a world tour?
+            </div>
+            <div class="itemlis">
+              <ul>
+                <li>
+                  yes, they are doing a world tour right now with the title 'RIHT HERE'
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="item">
+            <img src="https://github.com/musnasproject/tugasP13pw1/blob/main/whiplash.jpg" alt="" class="midBotcntn" />
+            <div class="titleItem">
+              has AESPA just released a new song?????
+            </div>
+            <div class="itemlis">
+              <ul>
+                <li>
+                  Yes, they just made a comeback with the title song 'WHIPLASH'
+                  whip whip plash
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="mostPopular">
+        <img
+          src="https://github.com/musnasproject/tugasP13pw1/blob/main/jeni.jpg"
+          alt="Most Popular Image"
+          class="mostPopularImg"
+        />
+        <div class="titleCR">
+          <span class="crTitle">MOST POPULAR</span>
+          <p class="cr1">
+            JENNIE has just released her new comeback solo song with the title song 'MANTRA'
+          </p>
+          <p class="cr2">
+            LISA also just released a new song, come listen to it soon!
+          </p>
+          <p class="cr3">
+            TWICE and Megan Thee Stallion will collaborate again, let's streaming!!!
+          </p>
+          <p class="cr4">
+            NCT's JAEHYUN will carry out millitary duties today 
+          </p>
+          <p class="cr5">
+            BTS's JIN just returned home from millitary today
+          </p>
+          <p class="cr5">
+            The CEO of illit said that illit doesn't like NewJeans
+          </p>
+          <p class="cr5">
+            NEWJEANS vs HYBE!!!!
+          </p>
+          <p class="cr5">
+            TWICE will have a comeback group, let's STAN TWICE
+          </p>
+          <p class="cr5">
+            Mingyu have a Girlfriend???????????????
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer">
+      <span class="topiks">TODAY'S TOP PICKS</span>
+      <div class="topPicks">
+        <div class="itemTopik">
+          <img src="https://github.com/musnasproject/tugasP13pw1/blob/main/bm.jpg" alt="" class="topikcontn" />
+          <div class="titleItem">
+            BABYMONSTER just released a new song 'DRIP'
+          </div>
+        </div>
+        <div class="itemTopik">
+          <img src="https://github.com/musnasproject/tugasP13pw1/blob/main/kiof.jpg" alt="" class="topikcontn" />
+          <div class="titleItem">
+            KISS OF LIFE just trending with song 'IGLOO'
+          </div>
+        </div>
+        <div class="itemTopik">
+          <img src="https://github.com/musnasproject/tugasP13pw1/blob/main/look.jpg" alt="" class="topikcontn" />
+          <div class="titleItem">
+            The sub unit of the group TWICE has just made a comeback
+          </div>
+        </div>
+        <div class="itemTopik">
+          <img src="https://github.com/musnasproject/tugasP13pw1/blob/main/illit.jpg" alt="" class="topikcontn" />
+          <div class="titleItem">
+            ILLIT made its first comeback after debuting with the title song 'CHERISE'
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
